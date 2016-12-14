@@ -1,0 +1,28 @@
+<template name="snippets">
+
+  <div class="container">
+    <h2 class="sous_titre1">Voyage et partage tes meilleurs spots <br>sur l’appli Snippets ! !</h2>
+    <h2 class="sous_titre2">Vos derniers spots publiés :</h2>
+
+
+
+    {{#each snippets}}
+    <img src="user_circle.png" alt="profil user" class="user_circle">
+
+
+    {{#if currentUser }}
+      <!--You're logged in-->
+      <script type="text/javascript">
+        $(".sous_titre1").hide();
+        $(".sous_titre2").show();
+      </script>
+      {{else}}
+      <script type="text/javascript">
+        $(".sous_titre2").hide();
+        $(".sous_titre1").show();
+      </script>
+    {{/if}}
+    <div class="snippets bordered ">{{text}}</div>
+    {{/each}}
+  </div>
+</template>
